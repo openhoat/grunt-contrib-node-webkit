@@ -49,4 +49,6 @@ Build the app packages :
 
     $ grunt nw
 
+The resulting zip files located in dist dir should contain app binaries.
+
 Enjoy !
