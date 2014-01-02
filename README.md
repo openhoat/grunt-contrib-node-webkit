@@ -23,30 +23,21 @@ Gruntfile.js example :
 module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    clean: {
-      default: ['dist']
-    },
     nw: {
-      binaries: {
-        linux32: '/opt/node-webkit/node-webkit-v0.8.3-linux-ia32/nw',
+      binaries: { // Node-webkit binaries for each platform (win, mac, linux32, linux64)
         linux64: '/opt/node-webkit/node-webkit-v0.8.3-linux-x64/nw',
-        mac: '/opt/node-webkit/node-webkit-v0.8.3-osx-ia32/nw',
         win: '/opt/node-webkit/node-webkit-v0.8.3-win-ia32/nw.exe'
       },
       options: {
         dist: 'dist'
       },
-      targets: ['linux64', 'win'],
-      src: [
+      targets: ['linux64', 'win'], // Platform targets to build
+      src: [ // Files to include in app package
         'package.json',
-        'config.js',
         'index.html',
         'index.js',
-        'assets/**/*',
-        'lib/folds-recovery.js',
-        'node_modules/profess/**/*',
-        'node_modules/trycatch/**/*',
-        'node_modules/xml2js/**/*'
+        'node_modules/anymodulename/**/*',
+        // ...
       ]
     }
   });
